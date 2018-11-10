@@ -38,12 +38,12 @@ sc = MinMaxScaler(feature_range = (0, 1))
 X = sc.fit_transform(X)
 
 # Training the SOM
-map_dimx=15
-map_dimy=10
+map_dimx=20
+map_dimy=15
 from minisom import MiniSom
-som = MiniSom(x = map_dimx, y = map_dimy, input_len = 16, sigma = 1.0, learning_rate = 0.5)
+som = MiniSom(x = map_dimx, y = map_dimy, input_len = 16, sigma = 1.0, learning_rate = 0.3)
 som.random_weights_init(X)
-som.train_random(data = X, num_iteration = 100)
+som.train_random(data = X, num_iteration = 1000)
 
 #Creating the map
 from collections import defaultdict
